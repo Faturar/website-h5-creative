@@ -1,225 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Libertans Creative Agency</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <title>Pixetivity - Creative Digital Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neonBlue: "#45c5ff",
+              neonPink: "#ff5dbb",
+              neonYellow: "#ffd34e",
+              deepBlack: "#080808",
+            },
+            boxShadow: {
+              neon: "0 0 0 2px rgba(69,197,255,.7), 0 0 28px rgba(69,197,255,.25)",
+            },
+            letterSpacing: {
+              hero: "0.18em",
+            },
+            keyframes: {
+              floatUp: {
+                "0%": { opacity: 0, transform: "translateY(20px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              floatUp: "floatUp .9s ease-out forwards",
+              marquee: "marquee 22s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <main class="page-shell">
-      <!-- Hero Section -->
-      <section class="hero" id="top">
-        <header class="hero__header">
-          <nav class="nav nav--left" aria-label="Primary left">
-            <a href="#how-it-works">How it works</a>
-            <a href="#service">Service</a>
-            <a href="#client">Client</a>
-          </nav>
-          <a class="logo" href="#top" aria-label="Libertans home">
-            <span class="logo__mark">✦</span>
-            <span>Libertans</span>
-          </a>
-          <nav class="nav nav--right" aria-label="Primary right">
-            <a href="#faq">FAQ</a>
-            <a class="btn btn--outline" href="#contact">Get Started</a>
-          </nav>
-        </header>
+  <body class="bg-deepBlack text-white antialiased">
+    <!-- HEADER / NAVIGATION -->
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-black/50 backdrop-blur-md transition-all duration-300">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+        <a href="#" class="text-xl font-black tracking-[0.12em]">PIXETIVITY</a>
+        <nav class="hidden items-center gap-8 text-xs font-semibold tracking-wider md:flex">
+          <a href="#home" class="transition hover:text-neonBlue">HOME</a>
+          <a href="#about" class="transition hover:text-neonBlue">ABOUT US</a>
+          <a href="#works" class="transition hover:text-neonBlue">OUR WORKS</a>
+          <a href="#service" class="transition hover:text-neonBlue">SERVICE</a>
+        </nav>
+        <button class="rounded-full border border-white/70 px-5 py-2 text-xs font-bold tracking-wider transition hover:border-neonBlue hover:text-neonBlue">
+          CONTACT US
+        </button>
+      </div>
+    </header>
 
-        <div class="hero__badge">35 N Dearborn St, Chicago</div>
-
-        <div class="hero__content">
-          <p class="hero__eyebrow">Crafting experiences that inspire</p>
-          <h1>Elevate Your Brand with Our Creative Magic</h1>
+    <main>
+      <!-- HERO SECTION -->
+      <section id="home" class="relative overflow-hidden bg-gradient-to-br from-[#4f29b7] via-[#552ec8] to-[#30147f] pt-32">
+        <div class="absolute inset-0 opacity-20 [background-image:radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]"></div>
+        <div class="relative mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div class="lg:col-span-8">
+            <p class="mb-6 inline-flex animate-floatUp items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider">
+              ✦ Creative Digital Agency ✦
+            </p>
+            <h1 class="space-y-2 text-5xl font-black uppercase leading-[0.95] sm:text-6xl md:text-7xl">
+              <span class="block tracking-hero">BRILLIANT MINDS</span>
+              <span class="block">WITH <span class="tracking-hero">BRILLIANT</span></span>
+              <span class="block"><span class="text-neonYellow">↘</span> <span class="tracking-hero">IDEAS</span></span>
+            </h1>
+            <div class="mt-6 flex flex-wrap gap-3 text-2xl">
+              <span class="rounded-full border border-neonBlue/80 px-3 py-1 text-neonBlue">◎</span>
+              <span class="rounded-full border border-neonPink/80 px-3 py-1 text-neonPink">✿</span>
+              <span class="rounded-full border border-neonYellow/80 px-3 py-1 text-neonYellow">✶</span>
+            </div>
+          </div>
+          <div class="flex flex-col justify-center lg:col-span-4">
+            <p class="text-sm leading-relaxed text-white/85">
+              Our motto is to fulfill customer demand by making them satisfied with growing their business.
+            </p>
+            <button class="mt-8 inline-flex w-fit items-center gap-2 rounded-full border-2 border-black bg-neonYellow px-7 py-3 text-sm font-extrabold uppercase text-black shadow-lg transition duration-300 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-white/70">
+              GET STARTED <span class="rounded-full border border-black p-1">↘</span>
+            </button>
+          </div>
         </div>
-
-        <div class="hero__visual hero__visual--left" aria-hidden="true">
-          <img
-            src="assets/hero-left.svg"
-            alt=""
-          />
-        </div>
-        <div class="hero__visual hero__visual--right" aria-hidden="true">
-          <img
-            src="assets/hero-right.svg"
-            alt=""
-          />
+        <div class="bg-neonPink/90 py-3 text-center text-lg font-black uppercase tracking-wider text-white">
+          <div class="whitespace-nowrap">LET'S TALK ↘ HI@PIXETIVITY.COM ↘ LET'S TALK ↘ HI@PIXETIVITY.COM ↘ LET'S TALK ↘</div>
         </div>
       </section>
 
-      <!-- Expertise + Impact Section -->
-      <section class="expertise" id="service">
-        <div class="section-head">
-          <h2>Our Expertise</h2>
-          <p>
-            Transform ideas into reality by combining creativity, strategy, and
-            experience.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="feature-card">
-            <div class="feature-card__head">
-              <h3>Market research</h3>
-              <span class="arrow">↗</span>
-            </div>
-            <p>
-              Blend customer behavior and actionable trends to confirm and improve
-              business ideas.
-            </p>
-            <img
-              src="assets/research.svg"
-              alt="Market research team in workshop"
-            />
-          </article>
-
-          <article class="feature-card feature-card--highlight">
-            <div class="feature-card__head">
-              <h3>Ads Production</h3>
-              <span class="arrow">↗</span>
-            </div>
-            <p>
-              Creative consultation, pre-production, production and post-production
-              support.
-            </p>
-            <img
-              src="assets/ads.svg"
-              alt="Video production setup"
-            />
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-card__head">
-              <h3>Branding strategies</h3>
-              <span class="arrow">↗</span>
-            </div>
-            <p>
-              Build distinct brand identities with customer-led positioning and
-              memorable campaigns.
-            </p>
-            <img
-              src="assets/branding.svg"
-              alt="Brand strategy session"
-            />
-          </article>
-        </div>
-
-        <div class="impact" id="how-it-works">
-          <h2>
-            WE CREATE IMPACTFUL EXPERIENCES FOR OUR CLIENTS’ CUSTOMERS EVERY TIME
-            THEY ENGAGE WITH A BRAND.
+      <!-- EXPERTISE / SERVICES SECTION -->
+      <section id="about" class="bg-black py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="max-w-5xl text-4xl font-black uppercase leading-tight sm:text-5xl">
+            WE ARE THE EXPERTS, LET US SHOW YOU OUR <span class="text-neonBlue">EXPERTISE</span>
           </h2>
-          <div class="impact__badges">
-            <div class="impact__cta">Let's get started</div>
-            <div class="impact__stats"><strong>700+</strong> Project Completed</div>
+          <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <article class="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-neonBlue hover:shadow-neon">
+              <div class="mb-4 text-neonPink">◌◍</div>
+              <h3 class="text-2xl font-extrabold uppercase">UI/UX Design</h3>
+              <p class="mt-3 text-sm text-white/75">Webs be design? Apps design? We can all of it. We love such as website from scratch!</p>
+            </article>
+            <article class="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-neonBlue hover:shadow-neon">
+              <div class="mb-4 text-neonBlue">▱▱▱</div>
+              <h3 class="text-2xl font-extrabold uppercase">Illustration</h3>
+              <p class="mt-3 text-sm text-white/75">We create custom illustrations from scratch that achieve business goals and make users happy.</p>
+            </article>
+            <article class="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-neonBlue hover:shadow-neon">
+              <div class="mb-4 text-neonYellow">◎◎</div>
+              <h3 class="text-2xl font-extrabold uppercase">Animation</h3>
+              <p class="mt-3 text-sm text-white/75">We make 2D or 3D animation according to your wishes and all can be customized.</p>
+            </article>
+            <article class="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-neonBlue hover:shadow-neon">
+              <div class="mb-4 text-neonYellow">▧</div>
+              <h3 class="text-2xl font-extrabold uppercase">Development</h3>
+              <p class="mt-3 text-sm text-white/75">We provide end-to-end projects from scratch until development phase, just tell us and we can do that!</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Recent Work Section -->
-      <section class="recent-work" id="client">
-        <p class="recent-work__label">Recent Work</p>
-        <h2>
-          Through meticulous planning, seamless execution, and creative
-          problem-solving, we achieved remarkable project success.
-        </h2>
-
-        <div class="work-grid">
-          <article class="work-card">
-            <img
-              src="assets/ordinary.svg"
-              alt="The Ordinary products"
-            />
-            <h3>The Ordinary</h3>
-            <p>Design, digital, web content, campaigns and activations.</p>
-          </article>
-
-          <article class="work-card">
-            <img
-              src="assets/google.svg"
-              alt="Google visual identity"
-            />
-            <h3>Google LLC</h3>
-            <p>
-              Brand strategy, merchandising, design digital, web content and
-              campaigns.
-            </p>
-          </article>
-
-          <article class="work-card">
-            <img
-              src="assets/apple.svg"
-              alt="Apple device product shot"
-            />
-            <h3>Apple Inc</h3>
-            <p>Design, digital, campaign events and strategic voice branding.</p>
-          </article>
-
-          <article class="work-card">
-            <img
-              src="assets/cocacola.svg"
-              alt="Coca-Cola can campaign"
-            />
-            <h3>The Coca-cola Company</h3>
-            <p>Brand strategy, design digital, campaign events and content.</p>
-          </article>
+      <!-- FEATURED WORKS / PORTFOLIO -->
+      <section id="works" class="bg-white py-16 text-black sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <h2 class="text-4xl font-black uppercase leading-none sm:text-5xl">WE CREATE &amp; <span class="text-neonBlue">INNOVATE</span></h2>
+            <div class="grid grid-cols-2 gap-2 text-sm font-semibold sm:flex">
+              <button class="rounded-xl border border-black/20 px-4 py-2 transition hover:bg-black hover:text-white">UI/UX Design</button>
+              <button class="rounded-xl border border-black/20 px-4 py-2 transition hover:bg-black hover:text-white">Illustration</button>
+              <button class="rounded-xl border border-black/20 px-4 py-2 transition hover:bg-black hover:text-white">Animation</button>
+              <button class="rounded-xl border border-black/20 px-4 py-2 transition hover:bg-black hover:text-white">Development</button>
+            </div>
+          </div>
+          <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80" class="h-80 w-full object-cover transition duration-500 group-hover:scale-110" alt="Cute Candle project" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 right-5">
+                <span class="text-sm">2022</span>
+                <h3 class="text-4xl font-black uppercase">Cute Candle</h3>
+                <span class="mt-2 inline-flex rounded-full bg-white/20 px-3 py-1 text-xs">Illustration</span>
+              </div>
+            </article>
+            <article class="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=900&q=80" class="h-80 w-full object-cover transition duration-500 group-hover:scale-110" alt="Dive The Metaverse project" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 right-5">
+                <span class="text-sm">2022</span>
+                <h3 class="text-4xl font-black uppercase">Dive The Metaverse</h3>
+                <span class="mt-2 inline-flex rounded-full bg-white/20 px-3 py-1 text-xs">Animation</span>
+              </div>
+            </article>
+            <article class="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl sm:col-span-2 lg:col-span-1">
+              <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80" class="h-80 w-full object-cover transition duration-500 group-hover:scale-110" alt="Little Susie project" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 right-5">
+                <span class="text-sm">2022</span>
+                <h3 class="text-4xl font-black uppercase">Little Susie</h3>
+                <span class="mt-2 inline-flex rounded-full bg-white/20 px-3 py-1 text-xs">Development</span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!-- Brands Logos Bar -->
-      <section class="brand-bar" aria-label="Partner brands">
-        <ul>
-          <li>Kellogg’s</li>
-          <li>L’Oréal</li>
-          <li>Heineken</li>
-          <li>Jeep</li>
-          <li>Champion</li>
-          <li>Spotify</li>
-          <li>Allianz</li>
-          <li>Coca-Cola</li>
-          <li>Gillette</li>
-          <li>Netflix</li>
-        </ul>
+      <!-- SERVICES PROCESS SECTION -->
+      <section id="service" class="bg-black py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="max-w-4xl text-4xl font-black uppercase leading-tight sm:text-5xl">BEST <span class="text-neonBlue">SERVICES</span>, RIGHT TIME, RIGHT PEOPLE</h2>
+          <div class="mt-10 space-y-4" id="accordion">
+            <article class="rounded-2xl border border-white/10">
+              <button class="accordion-toggle flex w-full items-center justify-between p-5 text-left text-2xl font-black uppercase">
+                1. UNDERSTANDING BRIEF <span>⌄</span>
+              </button>
+              <div class="accordion-content max-h-40 px-5 pb-5 text-sm text-white/75">
+                The first process is understanding the brief that has been sent by the client via online meet or chat and then the next process is the detail budget.
+              </div>
+            </article>
+            <article class="rounded-2xl border border-white/10">
+              <button class="accordion-toggle flex w-full items-center justify-between p-5 text-left text-2xl font-black uppercase">
+                2. BRANDSTORMING &amp; RESEARCH <span>⌃</span>
+              </button>
+              <div class="accordion-content px-5 pb-5 text-sm text-white/75">
+                We begin to plan and structure the project process based on the discovery phase before starting to jump into the design phase.
+                <div class="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+                  <img class="rounded-xl border border-white/15" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=400&q=80" alt="Research sample 1" />
+                  <img class="rounded-xl border border-white/15" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Research sample 2" />
+                  <img class="rounded-xl border border-white/15" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Research sample 3" />
+                  <img class="rounded-xl border border-white/15" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&q=80" alt="Research sample 4" />
+                </div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-white/10">
+              <button class="accordion-toggle flex w-full items-center justify-between p-5 text-left text-2xl font-black uppercase">
+                3. DESIGN PROCESS <span>⌄</span>
+              </button>
+              <div class="accordion-content hidden px-5 pb-5 text-sm text-white/75">
+                After completing the brainstorming &amp; research process then we make low fidelity and after low fidelity is approved the last step is high fidelity.
+              </div>
+            </article>
+            <article class="rounded-2xl border border-white/10">
+              <button class="accordion-toggle flex w-full items-center justify-between p-5 text-left text-2xl font-black uppercase">
+                4. DELIVERY &amp; PAYMENT <span>⌄</span>
+              </button>
+              <div class="accordion-content hidden px-5 pb-5 text-sm text-white/75">
+                After the final and final processes have gone through the feedback process and are final, the file can be sent to the client while the client pays the payment.
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <!-- Footer CTA -->
-      <footer class="footer-cta" id="contact">
-        <p class="footer-cta__eyebrow">Start crafting your brand story</p>
-        <h2>
-          PARTNER WITH US TO CREATE A
-          <span>COMPELLING</span>
-          NARRATIVE FOR YOUR BRAND!
-        </h2>
-        <p class="footer-cta__subtext">
-          Let’s bring your ideas to life with bold storytelling and strategic
-          execution.
-        </p>
-
-        <div class="footer-cta__actions" id="faq">
-          <button type="button">Market research</button>
-          <button type="button">Ads Production</button>
-          <button type="button">Branding strategies</button>
+      <!-- BRAND LOGOS STRIP -->
+      <section class="overflow-hidden bg-neonPink py-4">
+        <div class="flex w-[200%] animate-marquee gap-10 whitespace-nowrap text-3xl font-black uppercase text-white/70">
+          <span>NVIDIA</span><span>VISA</span><span>JBL</span><span>FUJIFILM</span><span>SAMSUNG</span><span>LENOVO</span><span>NVIDIA</span><span>VISA</span><span>JBL</span><span>FUJIFILM</span><span>SAMSUNG</span><span>LENOVO</span>
         </div>
+      </section>
 
-        <div class="footer-cta__bottom">
-          <div>
-            <p>35 N Dearborn St, Chicago, IL 60601, USA</p>
-            <p>(+1) 202-555-0188 · hello@libertans.com</p>
-          </div>
-          <div>
-            <p>Privacy &amp; Cookie Policy</p>
-            <p>Libertans © 2026</p>
+      <!-- FINAL CTA SECTION -->
+      <section class="bg-black py-20">
+        <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 class="text-5xl font-black uppercase leading-tight sm:text-6xl">
+            BRINGING <span class="text-neonBlue">BRANDS</span><br />
+            TO LIFE WITH <span class="text-neonPink">STRATEGY</span><br />
+            AND <span class="text-neonYellow">DESIGN</span>
+          </h2>
+          <button class="mt-10 inline-flex items-center gap-2 rounded-full bg-neonYellow px-7 py-3 text-sm font-black uppercase text-black transition hover:brightness-110">
+            CONTACT US <span class="rounded-full border border-black p-1">↘</span>
+          </button>
+          <div class="mt-12 flex flex-wrap items-center justify-center gap-3 text-xs font-bold uppercase tracking-wide">
+            <span class="rounded-full border border-white/35 px-5 py-2">Dribbble</span>
+            <span class="rounded-full border border-white/35 px-5 py-2">Instagram</span>
+            <span class="px-5 py-2 text-lg">PIXETIVITY</span>
+            <span class="rounded-full border border-white/35 px-5 py-2">Behance</span>
+            <span class="rounded-full border border-white/35 px-5 py-2">LinkedIn</span>
           </div>
         </div>
-      </footer>
+      </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          navbar.classList.add("bg-black/80");
+          navbar.querySelector("div").classList.remove("py-5");
+          navbar.querySelector("div").classList.add("py-3");
+        } else {
+          navbar.classList.remove("bg-black/80");
+          navbar.querySelector("div").classList.add("py-5");
+          navbar.querySelector("div").classList.remove("py-3");
+        }
+      });
+
+      const accordionToggles = document.querySelectorAll(".accordion-toggle");
+      accordionToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector("span");
+          const isHidden = content.classList.contains("hidden");
+
+          document.querySelectorAll(".accordion-content").forEach((item) => {
+            if (item !== content) {
+              item.classList.add("hidden");
+              item.previousElementSibling.querySelector("span").textContent = "⌄";
+            }
+          });
+
+          content.classList.toggle("hidden", !isHidden);
+          icon.textContent = isHidden ? "⌃" : "⌄";
+        });
+      });
+    </script>
   </body>
 </html>
